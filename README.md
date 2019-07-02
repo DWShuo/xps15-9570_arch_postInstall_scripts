@@ -37,18 +37,19 @@ should return this
 Next lets check if GPU switching is working
 1. unplug the power cord
 2. run ```lsmod | grep nvidia```
-    1. Should return blank
-3. check the discharge rate(should be 5.0W to 10.0W) via powertop (keep an eye on this)
+    * Should return blank
+3. run powertop the discharge rate should be around 5.0W to 10.0W (keep an eye on this)
 4. enable discrete gpu ```sudo ./enableGPU.sh```
-    1. check that its loaded with ```nvidia-smi```
-5. ```optirun glxgears```
+    * check that its loaded with ```nvidia-smi```
+5. run ```optirun glxgears```
 6. check powertop again, the power draw should be alot higher now.
 7. exit out of glxgear, and swtich back to integrated gpu
-    1. ```sudo ./disableGPU.sh```
-8. check powertop one last time, the power draw should have died down to around 5.0W to 10.0W
+    * ```sudo ./disableGPU.sh```
+8. check powertop one last time, the power draw should return to 5.0W to 10.0W
 
-
-
+## Notes
+* Both ```disableGPU.sh``` and ```enableGPU.sh``` are written to the home folder
+* The AUR package manager ```yay``` is installed during the script, if you have a diffrent package manager you prefer to use you may uninstall ```yay``` after the script has finished, via ```pacman -Rsn yay```.
 
 ## Author
 
