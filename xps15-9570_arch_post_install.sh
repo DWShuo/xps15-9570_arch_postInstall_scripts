@@ -21,6 +21,6 @@ yayDir
 sudo -u $currentUser makepkg -si
 
 echo "$(tput setaf 2)Downloading bumblebee-git, nvidia, mesa-demos...$(tput sgr 0)"
-sudo -u $currentUser yay -Syu bumblebee-git bbswitch nvidia mesa-demos primus
+sudo -u $currentUser yay -Syu bumblebee nvidia powertop unigine-valley
 
 
