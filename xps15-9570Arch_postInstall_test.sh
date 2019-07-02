@@ -57,3 +57,4 @@ fi
 
 sudo -u root systemctl enable bumblebeed.service
 
+echo "$(tput setaf 1)Reboot for settings to take effect$(tput sgr 0)"
