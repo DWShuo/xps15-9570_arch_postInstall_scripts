@@ -22,7 +22,7 @@ function yayDir(){
 yayDir
 sudo -u $currentUser makepkg -si
 
-echo "$(tput setaf 2)Downloading bumblebee-git, nvidia, mesa-demos...$(tput sgr 0)"
+echo "$(tput setaf 2)Downloading bumblebee, nvidia, powertop, mesa-demos...$(tput sgr 0)"
 sudo -u $currentUser yay -Syu bumblebee nvidia powertop mesa-demos
 
 echo "$(tput setaf 2)Adding user to bumblebee group$(tput sgr 0)"
