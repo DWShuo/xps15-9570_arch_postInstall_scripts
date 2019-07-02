@@ -70,3 +70,6 @@ echo "$(tput setaf 2)Reload systemd daemons$(tput sgr 0)"
 sudo -u root systemctl daemon-reload
 sudo -u root systemctl enable disable-nvidia-on-shutdown.service
 sudo -u root echo $'w /sys/bus/pci/devices/0000:01:00.0/power/control - - - - auto' > '/etc/tmpfiles.d/nvidia_pm.conf'
+
+
+echo "$(tput setaf 1)Reboot for settings to take effect...$(tput sgr 0)"
