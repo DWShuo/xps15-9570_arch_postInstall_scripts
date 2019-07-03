@@ -2,8 +2,8 @@
 currentUser=$USER
 echo 'Configuring i3-gaps'
 URL="https://raw.githubusercontent.com/DWShuo/.dotfiles/master/.config/i3/config"
-mv ~/.config/i3/config ~/.config/i3/config.bak
-wget $URL -P ~/.config/i3/
+mv /home/$currentUser/.config/i3/config /home/$currentUser/.config/i3/config.bak
+wget $URL -P /home/$currentUser/.config/i3/
 echo 'Installling steam spotify pywal bluetooth tlp...'
 yay -Syu steam spotify python-pywal blueman bluez tlp
 echo 'Setting up pywal'
