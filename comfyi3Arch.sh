@@ -20,6 +20,3 @@ sudo -u root systemctl mask systemd-rfkill.socket
 echo 'Logging out to apply settings'
 sleep 3s
 pkill -KILL -u $USER
-
-
-
