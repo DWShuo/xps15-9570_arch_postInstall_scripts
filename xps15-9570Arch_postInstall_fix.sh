@@ -64,7 +64,7 @@ sudo -u $currentUser echo $'#!/bin/sh\nmodprobe -r nvidia_drm\nmodprobe -r nvidi
 sudo -u $currentUser echo $'#!/bin/sh\n# allow to load nvidia module\nmv /etc/modprobe.d/disable-nvidia.conf /etc/modprobe.d/disable-nvidia.conf.disable\n# Remove NVIDIA card (currently in power/control = auto)\necho -n 1 > /sys/bus/pci/devices/0000\:01\:00.0/remove\nsleep 1\n# change PCIe power control\necho -n on > /sys/bus/pci/devices/0000\:00\:01.0/power/control\nsleep 1\n# rescan for NVIDIA card (defaults to power/control = on)\necho -n 1 > /sys/bus/pci/rescan\n# someone said that modprobe nvidia is needed also to load nvidia, to check\n# modprobe nvidia' > /home/$currentUser/enableGPU.sh
 
 echo "$(tput setaf 2)Createing service to disable nvidia on shutdown$(tput sgr 0)"
-sudo -u $currentUser echo $'[Unit]\nDescription=Disables Nvidia GPU on OS shutdown\n[Service]\nType=oneshot\nRemainAfterExit=true\nExecStart=/bin/true\nExecStop=/bin/bash -c "mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf || true"\n[Install]\nWantedBy=multi-user.target' > '/etc/systemd/system/disable-nvidia-on_shutdown.service'
+sudo -u $currentUser echo $'[Unit]\nDescription=Disables Nvidia GPU on OS shutdown\n[Service]\nType=oneshot\nRemainAfterExit=true\nExecStart=/bin/true\nExecStop=/bin/bash -c "mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf || true"\n[Install]\nWantedBy=multi-user.target' > '/etc/systemd/system/disable-nvidia-on-shutdown.service'
 
 echo "$(tput setaf 2)Reload systemd daemons$(tput sgr 0)"
 sudo -u root systemctl daemon-reload
