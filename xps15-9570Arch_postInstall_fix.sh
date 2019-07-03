@@ -55,7 +55,7 @@ echo "$(tput setaf 2)Black listing nouveau and ipmi$(tput sgr 0)"
 if grep -q ipmi_devintf /etc/modprobe.d/blacklist.conf; then
     echo "Items already  black listed"
 else
-    sudo -u root echo $'blacklist nouveau\nblacklist rivafb\nblacklist: nvidiafb\nblacklist rivatv\nblacklist nv\nblacklist nvidia\nblacklist nvidia-drm\nblacklist nvidia-modeset\nblacklist nvidia-uvm\nblacklist ipmi_msghandler\nblacklist ipmi_devintf' >> '/etc/modprobe.d/blacklist.conf'
+    sudo -u root echo $'blacklist nouveau\nblacklist rivafb\nblacklist nvidiafb\nblacklist rivatv\nblacklist nv\nblacklist nvidia\nblacklist nvidia-drm\nblacklist nvidia-modeset\nblacklist nvidia-uvm\nblacklist ipmi_msghandler\nblacklist ipmi_devintf' >> '/etc/modprobe.d/blacklist.conf'
 fi
 
 echo "$(tput setaf 2)Creating enableGPU and disableGPU script$(tput sgr 0)"
